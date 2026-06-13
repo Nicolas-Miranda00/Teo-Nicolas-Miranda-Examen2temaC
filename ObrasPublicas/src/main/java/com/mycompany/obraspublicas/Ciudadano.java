@@ -13,6 +13,10 @@ public class Ciudadano {
     private String nombre;
     private int password;
 //constructor 
+
+    public Ciudadano() {
+    }
+    
     public Ciudadano(String nombre, int password) {
         this.nombre = nombre;
         this.password = password;
@@ -48,6 +52,6 @@ public class Ciudadano {
         }
     }
     public boolean ciudadanosDiferentes(Ciudadano c2) {
-    return this.equals(c2);
-    }
+    return !this.equals(c2);
+}
 }

@@ -4,14 +4,19 @@
  */
 
 import com.mycompany.obraspublicas.Ciudadano;
+
 import java.time.LocalDate;
-import org.junit.jupiter.api.AfterEach;
+import java.util.concurrent.TimeUnit;
+
 import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Timeout;
+
+import static org.junit.jupiter.api.Assertions.*;
+
 
 /**
  *
@@ -27,7 +32,7 @@ public class CiudadanoTest {
 
         ciu = new Ciudadano("Anonimus", 1212);
 
-        System.out.println("INGRESO de ciudadano del bien");
+        System.out.println("INGRESO de ciudadano ");
     }
 
     @AfterAll
@@ -35,20 +40,20 @@ public class CiudadanoTest {
 
         System.out.println(
                 LocalDate.now().minusDays(1)
-                + " Baches reparados, Ciudadanos Felices");
+                + " Baches reparados");
     }
 
     @BeforeEach
     public void before() {
 
-        System.out.println("--------------------");
+        System.out.println("||||||||||||||||");
         System.out.println("Test N° " + i++);
     }
 
     @AfterEach
     public void after() {
 
-        System.out.println("--------------------");
+        System.out.println("||||||||||||||||");
     }
 
     @Test
@@ -56,7 +61,7 @@ public class CiudadanoTest {
 
         boolean resultado = ciu.validarIngreso(123456);
 
-        assertTrue(resultado); // Debe FALLAR
+        assertTrue(resultado); 
     }
 
     @Test
