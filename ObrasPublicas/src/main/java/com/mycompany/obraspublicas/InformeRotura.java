@@ -9,5 +9,10 @@ package com.mycompany.obraspublicas;
  * @author teito
  */
 public class InformeRotura {
-    
+    int codInf;
+    String fechaInforme;
+    String problema;
+    int codigoUrgencia;
+    Ciudadano ciudadano;
+    //Bache bache;
 }
