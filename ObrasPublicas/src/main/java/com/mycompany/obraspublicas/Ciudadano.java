@@ -9,14 +9,15 @@ package com.mycompany.obraspublicas;
  * @author teito
  */
 public class Ciudadano {
+    //atributos
     private String nombre;
     private int password;
-
+//constructor 
     public Ciudadano(String nombre, int password) {
         this.nombre = nombre;
         this.password = password;
     }
-
+//getter and setter
     public String getNombre() {
         return nombre;
     }
@@ -32,6 +33,7 @@ public class Ciudadano {
     public void setPassword(int password) {
         this.password = password;
     }
+    //metodos
     public boolean validarIngreso( int psw){
         return this.password == psw;
     }
