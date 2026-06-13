@@ -9,22 +9,12 @@ package com.mycompany.obraspublicas;
  * @author teito
  */
 public class Ciudadano {
-    int  idCiudadano;
-    String nombre;
-    String email;
+    private String nombre;
+    private int password;
 
-    public Ciudadano(int idCiudadano, String nombre, String email) {
-        this.idCiudadano = idCiudadano;
+    public Ciudadano(String nombre, int password) {
         this.nombre = nombre;
-        this.email = email;
-    }
-
-    public int getIdCiudadano() {
-        return idCiudadano;
-    }
-
-    public void setIdCiudadano(int idCiudadano) {
-        this.idCiudadano = idCiudadano;
+        this.password = password;
     }
 
     public String getNombre() {
@@ -35,22 +25,27 @@ public class Ciudadano {
         this.nombre = nombre;
     }
 
-    public String getEmail() {
-        return email;
+    public int getPassword() {
+        return password;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    
+    public void setPassword(int password) {
+        this.password = password;
     }
-    public void recibirNotificacion(){
-        System.out.println( " Enviar noticia : " + email );
-        
+    public boolean validarIngreso( int psw){
+        return this.password == psw;
     }
-
-    @Override
-    public String toString() {
-        return "||Ciudadano||" + "ID Ciudadano: " + idCiudadano + " Nombre: " + nombre + " Email: " + email ;
+    public void cambiarPassword(String newPass){
+        this.password = Integer.parseInt(newPass);
     }
-    
+    public void delay(int mili){
+        try {
+            Thread.sleep(mili);
+        } catch (InterruptedException e) {
+            System.out.println("Delay de " + mili + " milisegundos ");
+        }
+    }
+    public boolean ciudadanosDiferentes(Ciudadano c2) {
+    return this.equals(c2);
+    }
 }
